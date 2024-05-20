@@ -9,14 +9,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Vehicle.belongsTo(models.VehicleType, {
-        foreignKey: "vehicleTypeId",
-        as: "vehicleType",
-      });
-      Vehicle.hasMany(models.Booking, {
-        foreignKey: "vehicleId",
-        as: "bookings",
-      });
     }
   }
   Vehicle.init(
@@ -29,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: "VehicleTypes",
+          model: "VehicleType",
           key: "id",
         },
       },
