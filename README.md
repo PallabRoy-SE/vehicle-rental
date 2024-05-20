@@ -1,2 +1,3 @@
 # vehicle-rental
-This is a Rental application to book specific vehicle as per requirements for a specific time.
+
+This is a SERN stack Rental application to book specific vehicle as per requirements for a specific time.
