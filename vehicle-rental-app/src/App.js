@@ -1,11 +1,20 @@
-import Typography from "@mui/material/Typography";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Home from "./pages/home/Home";
+import { AlertProvider } from "./contexts/AlertContext";
+import { LoaderProvider } from "./contexts/LoaderContext";
 
 function App() {
   return (
-    <Typography variant="h1" className="App text-3xl font-bold underline">
-      Vehicle rental app
-    </Typography>
+    <AlertProvider>
+      <LoaderProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" Component={Home} />
+          </Routes>
+        </BrowserRouter>
+      </LoaderProvider>
+    </AlertProvider>
   );
 }
 
